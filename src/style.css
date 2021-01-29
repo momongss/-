@@ -1,0 +1,179 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+#App {
+  margin: 1.5em auto;
+  max-width: 1200px;
+  column-gap: 1.5em;
+}
+
+@media screen and (max-width: 576px) {
+  .SearchResult {
+    grid-template-columns: repeat(1, minmax(250px, 1fr));
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .SearchResult {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .SearchResult {
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .SearchResult {
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+  }
+}
+
+.SearchResult {
+  margin-top: 10px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+.SearchResult img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.SearchResult .item {
+  background-color: #eee;
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
+}
+
+.SearchInput {
+  width: 100%;
+  font-size: 40px;
+  padding: 10px 15px;
+}
+
+.ImageInfo {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ImageInfo .title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ImageInfo .title,
+.ImageInfo .description {
+  padding: 5px;
+}
+
+@media screen and (max-device-width: 768px) {
+  .ImageInfo .content-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    z-index: 1;
+  }
+}
+
+@media screen and (min-device-width: 768px) {
+  .ImageInfo .content-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    z-index: 1;
+  }
+}
+
+.ImageInfo .content-wrapper img {
+  width: 100%;
+}
+
+.ImageInfo .background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: white;
+  }
+}
+
+.darkModeBtn {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.loading-UI {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(179, 179, 179);
+}
+
+.loading-UI p {
+  font-size: 2rem;
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-section .search-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.search-section .random-search {
+  width: 50px;
+  height: 50px;
+}
+
+.search-section .recent-record {
+  display: flex;
+  align-items: center;
+}
+
+.total {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
